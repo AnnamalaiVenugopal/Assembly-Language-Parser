@@ -14,8 +14,14 @@ import java.util.Scanner;
 @SpringBootApplication
 public class AssemblyLanguageParserApplication implements CommandLineRunner {
 
-	@Autowired
 	AssemblyLanguageParser assemblyLanguageParser;
+
+	@Autowired
+	public AssemblyLanguageParserApplication(AssemblyLanguageParser assemblyLanguageParser){
+		this.assemblyLanguageParser = assemblyLanguageParser;
+	}
+
+	public AssemblyLanguageParserApplication(){}
 
 	public static void main(String[] args) {
 		SpringApplication.run(AssemblyLanguageParserApplication.class, args);

@@ -28,14 +28,6 @@ public abstract class Commands {
         String[] commandSplitUp = command.split(" ");
         CommandHistory commandHistory = new CommandHistory();
         commandHistory.setCommand(command);
-        String commandType;
-        if(commandSplitUp[0] == "MV"){
-            commandType = "MOVE";
-        }else {
-            commandType = commandSplitUp[0];
-        }
-        commandHistory.setCommandType(commandType);
-
         commandHistory.setCommandExecutionResult(Boolean.toString(commandExecutionStatus));
         commandHistory.setCreatedDate(new Date());
         commandHistoryRepository.save(commandHistory);
